@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>José Manuel Suárez Marín — CV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --navy: #0f2438;
+    --navy-2: #16324d;
+    --steel: #4c6b82;
+    --paper: #eef1f4;
+    --copper: #c17a3d;
+    --copper-light: #e0a868;
+    --ink: #1b2530;
+    --line: #d8dee3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  .sheet{
+    max-width:1000px;
+    margin:32px auto;
+    background:#fff;
+    display:grid;
+    grid-template-columns:300px 1fr;
+    box-shadow:0 10px 40px rgba(15,36,56,0.15);
+  }
+  /* ---- SIDEBAR ---- */
+  .side{
+    background:var(--navy);
+    color:#dbe4ec;
+    padding:44px 30px;
+    position:relative;
+  }
+  .side::after{
+    content:"";
+    position:absolute;
+    top:0; right:0;
+    width:4px; height:100%;
+    background:linear-gradient(180deg, var(--copper-light), var(--copper) 60%, var(--navy-2));
+  }
+  .name{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-weight:700;
+    font-size:1.65rem;
+    line-height:1.2;
+    color:#fff;
+    letter-spacing:0.3px;
+  }
+  .role{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.88rem;
+    color:var(--copper-light);
+    margin-top:8px;
+    font-weight:600;
+  }
+  .sub-role{
+    font-size:0.8rem;
+    color:#9fb2c2;
+    margin-top:4px;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+  }
+  .contact{
+    margin-top:28px;
+    font-size:0.82rem;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    color:#c4d1db;
+  }
+  .contact div{
+    margin-bottom:8px;
+    padding-left:0;
+  }
+  .side h3{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    color:var(--copper-light);
+    margin:34px 0 12px;
+    font-weight:700;
+  }
+  .skill-list{
+    list-style:none;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.82rem;
+    color:#dbe4ec;
+  }
+  .skill-list li{
+    padding:6px 0;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .tools{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.8rem;
+    color:#c4d1db;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 10px;
+  }
+  .tools span{
+    display:inline-block;
+  }
+  .tools span:not(:last-child)::after{
+    content:"·";
+    margin-left:10px;
+    color:var(--copper-light);
+  }
+  .lang-bar{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.82rem;
+    color:#dbe4ec;
+  }
+  /* ---- MAIN ---- */
+  .main{
+    padding:44px 46px;
+  }
+  .intro{
+    font-size:0.95rem;
+    color:#2b3644;
+    border-left:3px solid var(--copper);
+    padding-left:18px;
+    margin-bottom:34px;
+  }
+  section{margin-bottom:32px;}
+  section h2{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.78rem;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--navy);
+    font-weight:700;
+    border-bottom:1.5px solid var(--line);
+    padding-bottom:8px;
+    margin-bottom:18px;
+  }
+  .job{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:18px;
+    margin-bottom:22px;
+  }
+  .job:last-child{margin-bottom:0;}
+  .job-period{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.78rem;
+    color:var(--copper);
+    font-weight:700;
+    padding-top:2px;
+  }
+  .job-body h3{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.98rem;
+    color:var(--navy);
+    font-weight:700;
+  }
+  .job-body .org{
+    font-size:0.85rem;
+    color:var(--steel);
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    margin-bottom:8px;
+  }
+  .job-body ul{
+    margin-left:18px;
+    font-size:0.88rem;
+    color:#333e49;
+  }
+  .job-body li{margin-bottom:5px;}
+  .achieve-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px 24px;
+  }
+  .achieve{
+    border-top:2px solid var(--copper);
+    padding-top:10px;
+  }
+  .achieve .num{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--navy);
+    display:block;
+  }
+  .achieve .desc{
+    font-size:0.82rem;
+    color:#3d4854;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    margin-top:2px;
+  }
+  .edu-item{
+    font-size:0.9rem;
+  }
+  .edu-item .deg{
+    font-weight:700;
+    color:var(--navy);
+    font-family:'Helvetica Neue', Arial, sans-serif;
+  }
+  .edu-item .inst{
+    color:var(--steel);
+    font-size:0.85rem;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+  }
+  @media print{
+    body{background:#fff;}
+    .sheet{box-shadow:none;margin:0;}
+  }
+  @media (max-width:720px){
+    .sheet{grid-template-columns:1fr;}
+    .job{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <aside class="side">
+    <div class="name">José Manuel<br>Suárez Marín</div>
+    <div class="role">Ingeniero Electricista Senior</div>
+    <div class="sub-role">Líneas y Subestaciones Eléctricas</div>
+
+    <div class="contact">
+      <div>+54 11 7058 1190</div>
+      <div>josemsuarez660@gmail.com</div>
+      <div>linkedin.com/in/jmsuarezmarin</div>
+      <div>CABA, Argentina</div>
+    </div>
+
+    <h3>Competencias técnicas</h3>
+    <ul class="skill-list">
+      <li>Diseño de redes de distribución</li>
+      <li>Líneas aéreas de distribución</li>
+      <li>Subestaciones eléctricas hasta 69 kV</li>
+      <li>Inspección y supervisión de obras</li>
+      <li>Ingeniería conceptual y de detalle</li>
+      <li>Especificaciones técnicas y proyectos ejecutivos</li>
+      <li>Análisis de precios unitarios</li>
+      <li>Mantenimiento preventivo y correctivo</li>
+      <li>Puesta en servicio de subestaciones</li>
+      <li>Cálculo de demanda y caída de tensión</li>
+      <li>Protecciones, pararrayos y puesta a tierra</li>
+      <li>Normativa AEA 90364, IRAM, IEC/IEEE</li>
+    </ul>
+
+    <h3>Herramientas</h3>
+    <div class="tools">
+      <span>AutoCAD</span><span>CYMDIST</span><span>SCADA</span>
+      <span>MS Project</span><span>SQL Server</span><span>Power BI</span>
+      <span>Python</span><span>Office 365</span>
+    </div>
+
+    <h3>Idiomas</h3>
+    <div class="lang-bar">Español — Nativo</div>
+  </aside>
+
+  <main class="main">
+
+    <p class="intro">
+      Ingeniero Electricista Senior con 32 años de experiencia en el sector eléctrico,
+      especializado en ingeniería, diseño, construcción, inspección y mantenimiento de
+      redes eléctricas y subestaciones hasta 69 kV. Trayectoria en planificación y
+      ejecución de obras, especificaciones técnicas, presupuestación y puesta en
+      servicio, incluyendo proyectos de infraestructura eléctrica en entornos rurales
+      de alta complejidad logística.
+    </p>
+
+    <section>
+      <h2>Experiencia profesional</h2>
+
+      <div class="job">
+        <div class="job-period">2024 — Presente</div>
+        <div class="job-body">
+          <h3>Consultoría Independiente en Ingeniería Eléctrica</h3>
+          <div class="org">Libre ejercicio de la profesión</div>
+          <ul>
+            <li>Asesoramiento técnico independiente a empresas distribuidoras y clientes privados en proyectos de distribución de energía eléctrica en BT y MT.</li>
+            <li>Cálculo de demanda, caída de tensión, selección de conductores, protecciones, tableros, pararrayos y puesta a tierra.</li>
+            <li>Cálculos electromecánicos aplicados a líneas de distribución aéreas.</li>
+            <li>Elaboración de estudios de factibilidad, memorias técnicas y proyectos ejecutivos para líneas y subestaciones de distribución.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-period">2005 — 2023</div>
+        <div class="job-body">
+          <h3>Ingeniero de Diseño y Construcción</h3>
+          <div class="org">Redes de Distribución Eléctrica</div>
+          <ul>
+            <li>Elaboración de especificaciones técnicas e ingeniería básica y de detalle para líneas y subestaciones de distribución.</li>
+            <li>Planificación y supervisión de obras en tensiones menores a 69 kV, desde ingeniería conceptual hasta puesta en servicio.</li>
+            <li>Análisis de precios unitarios, cómputos métricos y presupuestación de obras de construcción y mantenimiento.</li>
+            <li>Inspección de obras de líneas aéreas y subestaciones en 13,8 kV, 34,5 kV y 69 kV.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-period">1993 — 2005</div>
+        <div class="job-body">
+          <h3>Ingeniero de Redes de Distribución</h3>
+          <div class="org">Sector Eléctrico — Venezuela</div>
+          <ul>
+            <li>Diseño y supervisión de proyectos de redes de distribución aéreas y subestaciones rurales.</li>
+            <li>Desarrollo de ingeniería conceptual y básica para expansión y mejora de redes.</li>
+            <li>Planificación y ejecución de mantenimiento preventivo y correctivo de infraestructura de distribución.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Logros destacados</h2>
+      <div class="achieve-grid">
+        <div class="achieve">
+          <span class="num">3.500 km</span>
+          <div class="desc">de líneas de distribución aéreas coordinadas en entornos rurales de alta complejidad logística.</div>
+        </div>
+        <div class="achieve">
+          <span class="num">7 subestaciones</span>
+          <div class="desc">rurales 34,5/13,8 kV puestas en servicio, con transformadores de hasta 2x10 MVA.</div>
+        </div>
+        <div class="achieve">
+          <span class="num">API ZEUS</span>
+          <div class="desc">desarrollada para cálculo de precios unitarios, cómputos métricos y presupuestación de obras.</div>
+        </div>
+        <div class="achieve">
+          <span class="num">SAIDI / SAIFI</span>
+          <div class="desc">sistema de KPI en tiempo real con Power BI + SQL Server, reduciendo reportes de horas a minutos.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Formación académica</h2>
+      <div class="edu-item">
+        <div class="deg">Ingeniero Electricista</div>
+        <div class="inst">Universidad de Oriente (UDO), Venezuela — Egresado 1993</div>
+      </div>
+      <div class="edu-item" style="margin-top:12px;">
+        <div class="deg">Dashboard &amp; BI Analytics</div>
+        <div class="inst">SQL Server · SQL Server Management Studio · Microsoft Power BI</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
